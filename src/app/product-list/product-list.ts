@@ -9,10 +9,14 @@ import { Product } from '../product';
   styleUrl: './product-list.css',
 })
 export class ProductList {
-  aProduct: Product = {
-    id: 1,
-    name: "Laptop"
-  };
+  allProducts: Product[] = [
+    { id: 1, name: "Laptop" },
+    { id: 2, name: "Tablet" },
+    { id: 3, name: "Smartphone" },
+    { id: 4, name: "Headphones" },
+    { id: 5, name: "Mouse" },
+    { id: 6, name: "Keyboard" }
+  ];
 
   countItems = 0;
 
