@@ -11,6 +11,10 @@ This project was created as part of Frontend Frameworks Module 1 practice activi
 
 Built with [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
 
+## Screenshot
+
+![Everyday Market App](Screenshot.png)
+
 ## Features
 
 - **Home Page**: Welcome page with Angular version badge
