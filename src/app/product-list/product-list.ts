@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
 import { Product } from '../product';
+import { CartService } from '../services/cart-service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,6 +10,8 @@ import { Product } from '../product';
   styleUrl: './product-list.css',
 })
 export class ProductList {
+  cartService = inject(CartService);
+  
   allProducts: Product[] = [
     { id: 1, name: "Laptop" },
     { id: 2, name: "Tablet" },
@@ -18,10 +21,10 @@ export class ProductList {
     { id: 6, name: "Keyboard" }
   ];
 
-  countItems = 0;
-
   receiveAddToCart(id: number) {
-    this.countItems += 1;
-    alert("Add item " + id + ", Items in cart: " + this.countItems);
+    const product = this.allProducts.find(p => p.id === id);
+    if (product) {
+      this.cartService.addToCart(product);
+    }
   }
 }
