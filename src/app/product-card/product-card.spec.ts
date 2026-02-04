@@ -14,6 +14,7 @@ describe('ProductCard', () => {
 
     fixture = TestBed.createComponent(ProductCard);
     component = fixture.componentInstance;
+    component.product = { id: 1, name: 'Test Product' };
     await fixture.whenStable();
   });
 
